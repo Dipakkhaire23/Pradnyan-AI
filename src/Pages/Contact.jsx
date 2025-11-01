@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 import { useState } from 'react';
 
-export default function Contact({ onNavigate }) {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -254,23 +254,43 @@ export default function Contact({ onNavigate }) {
         </div>
       </section>
 
-      {/* Map Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="overflow-hidden bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl">
-            <div className="relative h-96">
-              <div className="absolute inset-0 opacity-50 bg-slate-900"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <MapPin className="w-24 h-24 mx-auto mb-4 opacity-80" />
-                  <h3 className="mb-2 text-3xl font-bold">Find Us on the Map</h3>
-                  <p className="text-cyan-50">Visit our headquarters in Tech City</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    {/* Map Section */}
+<section className="py-16 bg-slate-50">
+  <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div className="grid items-center grid-cols-1 gap-8 md:grid-cols-2">
+      {/* Map Info */}
+      <div className="p-6 shadow-lg bg-green-50 rounded-2xl">
+        <h2 className="mb-4 text-2xl font-bold text-green-900">Our Main Office</h2>
+        <p className="mb-2 text-gray-700">
+          <strong>Address:</strong> Vishwakarma Institute of Information Technology, Pune, Maharashtra, India
+        </p>
+        <p className="mb-2 text-gray-700">
+          <strong>Phone:</strong> +91 9876543210
+        </p>
+        <p className="mb-2 text-gray-700">
+          <strong>Email:</strong> info@viitpune.edu.in
+        </p>
+        <p className="mt-4 text-gray-600">
+          Visit our main office for business queries, collaborations, or to learn more about our initiatives.
+        </p>
+      </div>
+
+      {/* Embedded Google Map */}
+      <div className="p-6 shadow-lg bg-green-50 rounded-2xl">
+        <iframe
+          title="Main Office Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.563195809777!2d73.94924927496153!3d18.559043268566573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c29f8f04d5cf%3A0x4c0fbe88d7d8dc7d!2sVishwakarma%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1716549876983!5m2!1sen!2sin"
+          width="100%"
+          height="300"
+          loading="lazy"
+          className="w-full border rounded-lg"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* CTA Section */}
       <section className="py-20 text-center bg-white">

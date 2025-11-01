@@ -1,7 +1,10 @@
 import { ArrowRight, TrendingUp, Users, Zap } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function CaseStudies({ onNavigate }) {
+export default function CaseStudies() {
+    const navigate = useNavigate();
+
   const [selectedCase, setSelectedCase] = useState(null);
 
   const caseStudies = [
@@ -298,7 +301,7 @@ export default function CaseStudies({ onNavigate }) {
                     AI
                   </p>
                   <button
-                    onClick={() => onNavigate("contact")}
+                    onClick={() => navigate("/contact")}
                     className="inline-flex items-center px-8 py-4 space-x-2 font-semibold text-white transition-all rounded-lg bg-cyan-500 hover:bg-cyan-600"
                   >
                     <span>Get in Touch</span>
@@ -320,7 +323,7 @@ export default function CaseStudies({ onNavigate }) {
               our AI solutions
             </p>
             <button
-              onClick={() => onNavigate("contact")}
+              onClick={() => navigate("/contact")}
               className="inline-flex items-center px-8 py-4 space-x-2 text-lg font-semibold transition-all bg-white rounded-lg text-cyan-600 hover:bg-slate-100 hover:scale-105"
             >
               <span>Let's Talk</span>
